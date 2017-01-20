@@ -1,6 +1,6 @@
 {
   "name": "@debitoor/secure-log-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "secure sensitive user data from loging",
   "main": "secureLogData",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/debitoor/secure-log-data#readme",
   "files": [
-    "secure-log-data"
+    "secure-log-data.js"
   ],
   "devDependencies": {
     "@debitoor/eslint-config-debitoor": "1.2.0",

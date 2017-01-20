@@ -1,6 +1,6 @@
-var traverse = require('traverse');
+const traverse = require('traverse');
 
-var SENSATIVE = [
+const SENSATIVE = [
 	'x-credentials',
 	'credentials',
 	'authorization',
@@ -12,8 +12,8 @@ var SENSATIVE = [
 	'security_token'
 ];
 
-var TOKEN = /token=[^;]*/;
-var TOKEN_ENC = /token%3[^&]*/;
+const TOKEN = /token=[^;]*/;
+const TOKEN_ENC = /token%3[^&]*/;
 
 function sanitize(val) {
 	if (!this.isLeaf || !val) {
