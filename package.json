@@ -1,0 +1,37 @@
+{
+  "name": "@debitoor/secure-log-data",
+  "version": "1.0.0",
+  "description": "secure sensitive user data from loging",
+  "main": "secureLogData",
+  "scripts": {
+    "test": "istanbul cover _mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debitoor/secure-log-data.git"
+  },
+  "keywords": [
+    "log",
+    "security"
+  ],
+  "author": "Debitoor",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/debitoor/secure-log-data/issues"
+  },
+  "homepage": "https://github.com/debitoor/secure-log-data#readme",
+  "files": [
+    "secure-log-data"
+  ],
+  "devDependencies": {
+    "@debitoor/eslint-config-debitoor": "1.2.0",
+    "chai": "3.5.0",
+    "mocha": "3.2.0",
+    "mocha-eslint": "3.0.1"
+  },
+  "dependencies": {
+    "istanbul": "0.4.5",
+    "traverse": "0.6.6"
+  }
+}
