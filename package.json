@@ -16,7 +16,6 @@
   ],
   "author": "Debitoor",
   "license": "UNLICENSED",
-  "private": true,
   "bugs": {
     "url": "https://github.com/debitoor/secure-log-data/issues"
   },
