@@ -1,6 +1,6 @@
 const traverse = require('traverse');
 
-const SENSATIVE = [
+const SENSITIVE = [
 	'x-credentials',
 	'credentials',
 	'authorization',
@@ -20,7 +20,7 @@ function sanitize(val) {
 		return;
 	} else if (
 		schemaError(this.key, this.parent && this.parent.node) ||
-		SENSATIVE.indexOf(this.key.toLowerCase()) !== -1) {
+		SENSITIVE.indexOf(this.key.toLowerCase()) !== -1) {
 		this.update('***');
 	} else if (TOKEN.test(val)) {
 		this.update(val.replace(TOKEN, 'token=***'));
@@ -34,7 +34,7 @@ function schemaError(key, obj) {
 		obj &&
 		obj.message &&
 		typeof obj.property === 'string' &&
-		SENSATIVE.indexOf(obj.property.toLowerCase()) !== -1;
+		SENSITIVE.indexOf(obj.property.toLowerCase()) !== -1;
 }
 
 module.exports = function(data) {
