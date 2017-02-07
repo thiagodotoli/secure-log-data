@@ -4,7 +4,8 @@
   "description": "secure sensitive user data from loging",
   "main": "./secure-log-data.js",
   "scripts": {
-    "test": "istanbul cover _mocha"
+    "test": "istanbul cover _mocha",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "security"
   ],
   "author": "Debitoor",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/debitoor/secure-log-data/issues"
   },
@@ -26,9 +27,10 @@
   "devDependencies": {
     "@debitoor/eslint-config-debitoor": "1.2.0",
     "chai": "3.5.0",
+    "coveralls": "2.11.16",
+    "istanbul": "0.4.5",
     "mocha": "3.2.0",
-    "mocha-eslint": "3.0.1",
-    "istanbul": "0.4.5"
+    "mocha-eslint": "3.0.1"
   },
   "dependencies": {
     "traverse": "0.6.6"
