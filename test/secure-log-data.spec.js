@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const secure = require('../secure-log-data');
 
 describe('secure-data.spec.js', function() {
-	
+
 	it('should mask all x-credentials values', function() {
 		expect(secure({
 			headers: {
@@ -98,6 +98,78 @@ describe('secure-data.spec.js', function() {
 			query: {
 				url: 'https://app.debitoor.com/printify.html#/invoice/57e7d6ff2b3eba10001b6fd3?token=***'
 			}
+		});
+	});
+
+	it('should mask all sensative paths', function() {
+		expect(secure({
+			auth: {
+				user: 'secretUserName',
+				good: 'not secret'
+			},
+			authX: {
+				user: 'not secret',
+				good: 'not secret'
+			},
+			user: {
+				auth: 'not secret'
+			},
+			data: {
+				auth: {
+					user: 'secretUserName',
+					good: 'not secret'
+				}
+			},
+			datas: [
+				{
+					auth: {
+						user: 'secretUserName',
+						good: 'not secret'
+					}
+				},
+				{
+					data: {
+						auth: {
+							user: 'secretUserName',
+							good: 'not secret'
+						}
+					}
+				}
+			]
+		})).to.eql({
+			auth: {
+				user: '***',
+				good: 'not secret'
+			},
+			authX: {
+				user: 'not secret',
+				good: 'not secret'
+			},
+			user: {
+				auth: 'not secret'
+			},
+			data: {
+				auth: {
+					user: '***',
+					good: 'not secret'
+				}
+			},
+			datas: [
+				{
+					auth: {
+						user: '***',
+						good: 'not secret'
+					}
+				},
+				{
+					data: {
+						auth: {
+							user: '***',
+							good: 'not secret'
+						}
+					}
+				}
+			]
 		});
 	});
 
