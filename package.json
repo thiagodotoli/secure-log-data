@@ -1,6 +1,6 @@
 {
   "name": "@debitoor/secure-log-data",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "secure sensitive user data from loging",
   "main": "./secure-log-data.js",
   "scripts": {
