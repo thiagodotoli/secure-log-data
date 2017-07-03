@@ -111,6 +111,9 @@ describe('secure-data.spec.js', function() {
 				user: 'not secret',
 				good: 'not secret'
 			},
+			user: {
+				auth: 'not secret'
+			},
 			data: {
 				auth: {
 					user: 'secretUserName',
@@ -141,6 +144,9 @@ describe('secure-data.spec.js', function() {
 			authX: {
 				user: 'not secret',
 				good: 'not secret'
+			},
+			user: {
+				auth: 'not secret'
 			},
 			data: {
 				auth: {
