@@ -42,7 +42,7 @@ function isSensativePath(key, path) {
 	}
 	const sensativePath = SENSATIVE_PATH[key];
 	let partialPath;
-	for (var i = path.length; i >= 0; i--) {
+	for (let i = path.length; i >= 0; i--) {
 		const previousPath = partialPath ? `${partialPath}.` : '';
 		if (`${previousPath}${path[i]}` === sensativePath) {
 			return true;
