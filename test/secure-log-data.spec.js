@@ -173,4 +173,36 @@ describe('secure-data.spec.js', function() {
 		});
 	});
 
+	it('should hide custom sensitive data', () => {
+		expect(secure({
+			headers: {
+				'mySensitiveField': 'pwd=1',
+				'x-credentials': 'pwd=1',
+				name: 'a'
+			},
+			inner: {
+				name: 'b',
+				data: {
+					'mySensitiveField': 'pwd=2',
+					'x-credentials': 'pwd=1',
+					user: 'bob'
+				}
+			}
+		}, { sensitiveKeys: ['mySensitiveField'] })).to.eql({
+			headers: {
+				'mySensitiveField': '***',
+				'x-credentials': '***',
+				name: 'a'
+			},
+			inner: {
+				name: 'b',
+				data: {
+					'mySensitiveField': '***',
+					'x-credentials': '***',
+					user: 'bob'
+				}
+			}
+		});
+	});
+
 });
