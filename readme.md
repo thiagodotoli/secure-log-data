@@ -9,6 +9,7 @@ Module for securing sensitive data from log objects.
 
 ```javascript
 const secureLogData = require('@debitoor/secure-log-data');
-const securedLogObject = securedLogObject(logObject);
+const options = {sensitiveKeys: ['array', 'of', 'custom', 'sensitive',  'keys']}
+const securedData = secureLogData(logObject, options);
 
 ```
