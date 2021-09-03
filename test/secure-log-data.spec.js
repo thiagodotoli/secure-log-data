@@ -213,8 +213,8 @@ describe('secure-data.spec.js', function() {
 				data: {}
 			});
 		} catch (err) {
-			expect(err).to.be.undefined
+			expect(err).to.be.undefined;
 		}
-	})
+	});
 
 });
