@@ -205,4 +205,16 @@ describe('secure-data.spec.js', function() {
 		});
 	});
 
+	it('should not throw error for regexp strings', () => {
+		try {
+			expect(secure({
+				data: Object.create(null)
+			})).to.eql({
+				data: {}
+			});
+		} catch (err) {
+			expect(err).to.be.undefined
+		}
+	})
+
 });

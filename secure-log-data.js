@@ -31,10 +31,12 @@ function sanitize({ sensitiveKeys = [] } = {}) {
 			sensitiveKeys.indexOf(this.key.toLowerCase()) !== -1 ||
 			isSensativePath(this.key, this.parent && this.parent.path)) {
 			this.update('***');
-		} else if (TOKEN.test(val)) {
-			this.update(val.replace(TOKEN, 'token=***'));
-		} else if (TOKEN_ENC.test(val)) {
-			this.update(val.replace(TOKEN_ENC, 'token%3***'));
+		} else if (typeof val === 'string') {
+			if (TOKEN.test(val)) {
+				this.update(val.replace(TOKEN, 'token=***'));
+			} else if (TOKEN_ENC.test(val)) {
+				this.update(val.replace(TOKEN_ENC, 'token%3***'));
+			}
 		}
 	};
 }
