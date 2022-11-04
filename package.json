@@ -33,6 +33,6 @@
     "mocha-eslint": "3.0.1"
   },
   "dependencies": {
-    "traverse": "0.6.6"
+    "traverse": "0.6.7"
   }
 }
